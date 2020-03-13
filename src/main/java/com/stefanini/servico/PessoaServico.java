@@ -2,8 +2,6 @@ package com.stefanini.servico;
 
 import com.stefanini.dao.PessoaDao;
 import com.stefanini.model.Pessoa;
-import com.stefanini.util.IGenericService;
-
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;

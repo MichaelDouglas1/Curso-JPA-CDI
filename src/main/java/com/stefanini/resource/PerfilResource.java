@@ -14,43 +14,43 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.stefanini.model.Endereco;
-import com.stefanini.servico.EnderecoServico;
+import com.stefanini.model.Perfil;
+import com.stefanini.servico.PerfilServico;
 
-@Path("endereco")
+@Path("perfil")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class EnderecoResource {
+public class PerfilResource {
 
 	@Inject
-	private EnderecoServico enderecoServico;
+	private PerfilServico perfilServico;
 
 	@GET
-	public Response obterListaEndereco() {
-		return Response.ok(enderecoServico.getList().get()).build();
+	public Response obterListaperfil() {
+		return Response.ok(perfilServico.getList().get()).build();
 	}
 
 	@POST
-	public Response obterListaEndereco(@Valid Endereco endereco) {
-		return Response.ok(enderecoServico.salvar(endereco)).build();
+	public Response obterListaperfil(@Valid Perfil perfil) {
+		return Response.ok(perfilServico.salvar(perfil)).build();
 	}
 	
 	@PUT
-	public Response alterarEndereco(@Valid Endereco endereco) {
-		return Response.ok(enderecoServico.atualizar(endereco)).build();
+	public Response alterarperfil(@Valid Perfil perfil) {
+		return Response.ok(perfilServico.atualizar(perfil)).build();
 	}
 	
 	@DELETE
 	@Path("/{id}")
-	public Response removerEndereco(@PathParam("id") Long id) {
-		enderecoServico.remover(id);
+	public Response removerperfil(@PathParam("id") Long id) {
+		perfilServico.remover(id);
 		return Response.ok().build();
 	}
 	
 
 	@GET
 	@Path("/{id}")
-	public Response obterPessoa(@PathParam("id") Long id) {
+	public Response obterPerfil(@PathParam("id") Long id) {
 		return Response.status(Status.INTERNAL_SERVER_ERROR).entity("deu ruim").build();
 //		return Response.ok(pessoaServico.encontrar(id).get()).build();
 	}
