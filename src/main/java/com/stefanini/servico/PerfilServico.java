@@ -7,9 +7,7 @@ import java.util.Optional;
 import javax.inject.Inject;
 import javax.validation.Valid;
 
-import com.stefanini.dao.EnderecoDao;
 import com.stefanini.dao.PerfilDao;
-import com.stefanini.model.Endereco;
 import com.stefanini.model.Perfil;
 
 public class PerfilServico implements Serializable {
